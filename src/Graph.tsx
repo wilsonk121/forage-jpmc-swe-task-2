@@ -40,11 +40,7 @@ class Graph extends Component<IProps, {}> {
       top_ask_price: 'float',
       top_bid_price: 'float',
       timestamp: 'date',
-      elem.setAttribute('view','y_line');
-      elem.setAttribute('column_pivots','["stock"]');
-      elem.setAttribute('row_pivots','["timestamp"]');
-      elem.setAttribute('columns','["top_ask_price"]');
-      elem.setAttribute('aggregates',`{"stock":"distinct count","top_ask_price":"avg","top_bid_price":"avg","timestamp":"distinct count"}`);
+
     };
 
     if (window.perspective && window.perspective.worker()) {
@@ -52,7 +48,11 @@ class Graph extends Component<IProps, {}> {
     }
     if (this.table) {
       // Load the `table` in the `<perspective-viewer>` DOM reference.
-
+      elem.setAttribute('view','y_line');
+      elem.setAttribute('column_pivots','["stock"]');
+      elem.setAttribute('row_pivots','["timestamp"]');
+      elem.setAttribute('columns','["top_ask_price"]');
+      elem.setAttribute('aggregates',`{"stock":"distinct count","top_ask_price":"avg","top_bid_price":"avg","timestamp":"distinct count"}`);
       // Add more Perspective configurations here.
       elem.load(this.table);
     }
