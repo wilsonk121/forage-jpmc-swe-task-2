@@ -1,0 +1,25 @@
+From fef3d0d0333791bea3dd839dc69a3ff2066dc2f8 Mon Sep 17 00:00:00 2001
+From: wilsonk121 <wilsonlj@connect.hku.hk>
+Date: Tue, 29 Aug 2023 11:45:18 +0800
+Subject: [PATCH] debugging2
+
+---
+ src/Graph.tsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index 96831fe..b8fa696 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -14,7 +14,7 @@ interface IProps {
+  * Perspective library adds load to HTMLElement prototype.
+  * This interface acts as a wrapper for Typescript compiler.
+  */
+-interface PerspectiveViewerElement {
++interface PerspectiveViewerElement extends HTMLElement{
+   load: (table: Table) => void,
+ }
+ 
+-- 
+2.35.2.windows.1
+
